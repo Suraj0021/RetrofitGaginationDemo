@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/playingFragment">
+
+    <fragment
+        android:id="@+id/playingFragment"
+        android:name="com.suraj.moviesdemo.ui.fragments.PlayingFragment"
+        android:label="fragment_playing"
+        tools:layout="@layout/fragment_playing">
+        <action
+            android:id="@+id/action_playingFragment_to_populerFragment"
+            app:destination="@id/populerFragment" />
+        <action
+            android:id="@+id/action_playingFragment_to_topRatedFragment"
+            app:destination="@id/topRatedFragment" />
+        <action
+            android:id="@+id/action_playingFragment_to_upcomingFragment"
+            app:destination="@id/upcomingFragment" />
+
+        <action
+            android:id="@+id/action_playingFragment_to_MoviesDetails"
+            app:destination="@id/movieDetailsActivity" />
+    </fragment>
+
+
+
+    <fragment
+        android:id="@+id/populerFragment"
+        android:name="com.suraj.moviesdemo.ui.fragments.PopulerFragment"
+        android:label="fragment_populer"
+        tools:layout="@layout/fragment_populer"
+        app:popUpToInclusive="true">
+        <action
+            android:id="@+id/action_populerFragment_to_playingFragment"
+            app:destination="@id/playingFragment" />
+        <action
+            android:id="@+id/action_populerFragment_to_topRatedFragment"
+            app:destination="@id/topRatedFragment" />
+        <action
+            android:id="@+id/action_populerFragment_to_upcomingFragment"
+            app:destination="@id/upcomingFragment" />
+        <action
+            android:id="@+id/action_upcomingFragment_to_MoviesDetails"
+            app:destination="@id/movieDetailsActivity" />
+    </fragment>
+
+
+
+
+
+    <fragment
+        android:id="@+id/topRatedFragment"
+        android:name="com.suraj.moviesdemo.ui.fragments.TopRatedFragment"
+        android:label="fragment_top_rated"
+        tools:layout="@layout/fragment_top_rated"
+        app:popUpToInclusive="true">
+        <action
+            android:id="@+id/action_topRatedFragment_to_playingFragment"
+            app:destination="@id/playingFragment" />
+        <action
+            android:id="@+id/action_topRatedFragment_to_populerFragment"
+            app:destination="@id/populerFragment" />
+        <action
+            android:id="@+id/action_topRatedFragment_to_upcomingFragment"
+            app:destination="@id/upcomingFragment" />
+    </fragment>
+
+
+
+
+
+    <fragment
+        android:id="@+id/upcomingFragment"
+        android:name="com.suraj.moviesdemo.ui.fragments.UpcomingFragment"
+        android:label="fragment_upcoming"
+        tools:layout="@layout/fragment_upcoming"
+        app:popUpToInclusive="true">
+        <action
+            android:id="@+id/action_upcomingFragment_to_playingFragment"
+            app:destination="@id/playingFragment" />
+        <action
+            android:id="@+id/action_upcomingFragment_to_populerFragment"
+            app:destination="@id/populerFragment" />
+        <action
+            android:id="@+id/action_upcomingFragment_to_topRatedFragment"
+            app:destination="@id/topRatedFragment" />
+    </fragment>
+    <activity
+        android:id="@+id/movieDetailsActivity"
+        android:name="com.suraj.moviesdemo.activity.MovieDetailsActivity"
+        android:label="activity_movie_details"
+        tools:layout="@layout/activity_movie_details" >
+
+
+
+    </activity>
+
+
+</navigation>
